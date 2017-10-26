@@ -13,8 +13,7 @@ let stacks = {
   c: []
 };
 
-let startStackLastNumner = stacks[startStack].last()
-let endStacksLastNumber = stacks[endStack].last()
+
 
 function printStacks() {
   console.log("a: " + stacks.a);
@@ -24,35 +23,43 @@ function printStacks() {
 
 function movePiece(startStack,endStack) {
   // Your code here
-  if (startStack=== a && endStack=== b){
-    endStack.push(endStacksLastNumber)
-  } else if (startStack=== a && endStack=== c){
-    endStack.push(endStacksLastNumber)
-  } else if (startStack=== b && endStack=== a){
-    endStack.push(endStacksLastNumber)
-  } else if(startStack=== b && endStack=== c){
-    endStack.push(endStacksLastNumber)
-  } else if (startStack=== c && endStack=== a){
-    endStack.push(endStacksLastNumber)
-  } else if (startStack=== c && endStack=== b){
-    endStack.push(endStacksLastNumber)
-  }
+  console.log('i am in movePiece')
+  stacks[startStack.length-1]
+  let startStackLastNumner = stacks[startStack.length-1]
+  let endStacksLastNumber = stacks[endStack.length-1]
+  let o = stacks[startStack]
+  let p = o.pop()
+  let a = stacks[endStack]
+    a.push(p)
+
 
 
 }
 
-function isLegal(startStack,endStacks) {
+function isLegal(startStack,endStack) {
   // Your code here
- if (startStackLastNumner< endStacksLastNumber){
+  console.log('i am in islegal')
+  let t = stacks[startStack]
+  let y= t[t.length-1]
+//  console.log(y)
+//  console.log('i am right after start stacks last numner')
+  let u =stacks[endStack]
+  let i = u[u.length-1]
+  //console.log(i)
+//console.log(' i am after endstackslast number ')
+ if (y< i || i==undefined){
    return true
+   console.log('i am after the if statement')
  } else{
+   console.log('i am after the else')
    return false
  }
 }
 
 function checkForWin() {
   // Your code here
-  if (stacks.c.length === 4){
+  console.log('i am in checkforwin')
+  if (stacks['c'.length] === 4){
     return true
   }
 
@@ -63,6 +70,8 @@ function towersOfHanoi(startStack, endStack) {
   if(isLegal(startStack,endStack)){
     movePiece(startStack,endStack)
     checkForWin()
+  } if (checkForWin){
+    console.log('you have won!')
   }
 
 }

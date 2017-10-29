@@ -42,7 +42,7 @@ function isLegal(startStack,endStack) {
   let t = stacks[startStack]
   let y= t[t.length-1]
 //  console.log(y)
-//  console.log('i am right after start stacks last numner')
+ console.log('i am right after start stacks last numner')
   let u =stacks[endStack]
   let i = u[u.length-1]
   //console.log(i)
@@ -59,7 +59,7 @@ function isLegal(startStack,endStack) {
 function checkForWin() {
   // Your code here
   console.log('i am in checkforwin')
-  if (stacks['c'.length] === 4){
+  if (stacks[''].length === 4){
     return true
   }
 
@@ -70,8 +70,6 @@ function towersOfHanoi(startStack, endStack) {
   if(isLegal(startStack,endStack)){
     movePiece(startStack,endStack)
     checkForWin()
-  } if (checkForWin){
-    console.log('you have won!')
   }
 
 }
